@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Acme&family=Oleo+Script+Swash+Caps&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+<!-- <link rel="stylesheet" href="dash_style.css">   -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quizzl</title>
+
+<!-- Style sheet for loading screen , under maintenance -->
+<style>
+
+
+body {margin:0;}
+
+.navbar {
+  overflow: hidden;
+  background-color: rgb(225, 55, 55);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  font-family: 'Acme', sans-serif;
+  text-align: center;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 27px;
+}
+
+.navbar #ok:hover {
+  background-color:whitesmoke;
+  color: black;
+  
+}
+
+
+/* #ok {
+  display: block;
+  font-family: 'Acme', sans-serif;
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
+  font-size: 27px;
+  float: right;
+  border: none;
+  
+}  */
+
+
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: auto;
+  background-color:whitesmoke; /* Used in this example to enable scrolling */
+}
+#clip1 {
+    margin-top: 43px;
+    background-color: white;
+    width: auto;
+    padding: 16px;
+    border-radius: 1%;
+}
+.flex-container {
+  display: flex;
+}
+
+#p1 {
+  width: 645px;
+  margin: 10px;
+  
+}
+#p2 {
+  margin-top: 119px;
+  margin-left: 58px;
+}
+#part_2{
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 43px;
+  text-align: center;
+}
+#clip2 {
+    margin-top: 43px;
+    background-color: white;
+    width: auto;
+    padding: 16px;
+    border-radius: 1%;
+}
+#clip2 > p{
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 43px;
+  text-align: center;
+  
+}
+
+
+.grid-container {
+  display: grid;
+  padding: 10px;
+  grid-template-columns: auto auto auto auto;
+}
+.grid-item {
+padding: 10px;
+display: inline-block;
+justify-content: center;
+
+}
+
+ .grid-item > img{
+  height: 130px;
+  width: auto;
+}
+blockquote.b1{
+  background:rgb(240, 202, 202);
+  padding: 1em;
+  border-radius: 1em;
+}
+q::before,
+q::after {
+  animation: dancing 1s linear infinite;
+  display: inline-block;
+  transform: rotate(13deg);
+}
+
+@keyframes dancing {
+  0% {
+    transform: rotate(13deg) scale(2);
+  }
+
+  25% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-13deg) scale(2);
+  }
+
+  75% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(13deg) scale(2);
+  }
+}
+q {
+  quotes: "‘" "’" "“" "”" "‘" "’" "“" "”";
+}
+.quote {
+  margin: 0;
+  background: #eee;
+  padding: 1em;
+  border-radius: 1em;
+  font-size: 20px;
+}
+.quote figcaption,
+.quote blockquote {
+  margin: 1em;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  border-radius: 100px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+  }
+.fa-skype {
+  background: #00aff0;
+  color: white;
+}
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+#footer{
+  background-color: rgb(235, 122, 122);
+
+  }
+#socials{
+  text-align: center;
+  padding: 5px;
+  margin-right:3px;
+}
+
+</style>
+
+</head>
+<body>
+    <div>{% include "quiz/load.html" %}</div>
+  <!-- <div id="overlayer"></div>
+  <div class="preloader">
+     <div class="loader">
+        <span class="loader-inner"></span>
+     </div>
+     <p>loading...</p>
+  </div> -->
+<div class="navbar">
+  <div class="container" id="logo">
+     <a href="#" style="color: #4a4a4a;">Quizzl</a>
+  </div>
+      <a id="ok" style=" padding-left: 30px;" href="/" class="nav-item nav-link active">Home</a>
+      <a id="ok" href="#" class="nav-item nav-link">Teacher</a>
+      <a id="ok" href="#" class="nav-item nav-link">Student</a>
+      <a id="ok" href="/adminclick" class="nav-item nav-link">Admin</a>
+  
+</div>
+
+<div class="main">
+  <div class="flex-container" id="clip1">
+    <div id="p1"><img id="img" src=" {% static "dash/pic_one.png" %} " alt="loading..."></div>
+    <div id="p2"><img src=" {% static "dash/quote_one.png" %} " alt=""></div>
+  </div>
+  <div class="container" id="part_2">
+    <b><p>Welcome to Exam Portal</p></b>
+       <p>This is a website where you can take exams and get results.</p>
+       <p>You can also view your results and see your performance.</p>
+       {% comment %} <a href="/student/studentsignup" class="btn btn-lg btn-info" style="padding-right: 35px;"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up</a> {% endcomment %}
+
+  </div>
+  <div class="container" id="clip2">
+    <p><u>OUR PARTNERS</u> </p>
+    <div class="grid-container">
+      <div class="grid-item"><img src=" {% static "dash/aakash.png" %} " alt=""></div>
+      <div class="grid-item"><img src=" {% static "dash/aicte.png" %} " alt=""></div>
+      <div class="grid-item"><img src=" {% static "dash/byjus.png" %} " alt=""></div>  
+      <div class="grid-item"><img src=" {% static "dash/career_launcher.png" %} " alt=""></div>
+      <div class="grid-item"><img src=" {% static "dash/etoos.png" %} " alt=""></div>
+      <div class="grid-item"><img src=" {% static "dash/fiitjee.png" %} " alt=""></div>  
+      <div class="grid-item"><img src=" {% static "dash/cbse.png" %} " alt="" height="130px" width="auto"></div>
+      <div class="grid-item"><img src=" {% static "dash/vanik.jpg" %} " alt="" height="130px" width="auto"></div>
+    
+    </div>
+    <p><u>OUR VISION</u> </p>
+<blockquote class="b1" style="font-size: 20px;">Of all the things I didn't say, I didn't say <q>I definitely didn’t say <q>I did not say <q>I never said,
+                <q>I’ll get the readers on my side with cupcakes!</q> I only implied it.</q> that’s totally and
+            completely false. Look, Mr. Hamilton, here completely agrees with me.</q> It was, rather, a couple of crisp
+        Mr. Washingtons who didthe talking</q> most.</blockquote>
+
+        <figure class="quote">
+            <blockquote>
+              But web browsers aren’t like web servers. If your back-end code is getting so big that it’s starting to run noticably slowly, you can throw more computing power at it by scaling up your server. That’s not an option on the front-end where you don’t really have <em>one</em> run-time environment—your end users have their own run-time environment with its own constraints around computing power <strong>and</strong> network connectivity.
+            </blockquote>
+            <figcaption>
+              &mdash; Jeremy Keith, <cite>Mental models</cite>  </figcaption>
+          </figure>
+
+          <blockquote class="b1" style="font-size: 20px;">Of all the things I didn't say, I didn't say <q>I definitely didn’t say <q>I did not say <q>I never said,
+            <q>I’ll get the readers on my side with cupcakes!</q> I only implied it.</q> that’s totally and
+        completely false. Look, Mr. Hamilton, here completely agrees with me.</q> It was, rather, a couple of crisp
+    Mr. Washingtons who didthe talking</q> most.</blockquote>
+
+    <figure class="quote">
+        <blockquote>
+          But web browsers aren’t like web servers. If your back-end code is getting so big that it’s starting to run noticably slowly, you can throw more computing power at it by scaling up your server. That’s not an option on the front-end where you don’t really have <em>one</em> run-time environment—your end users have their own run-time environment with its own constraints around computing power <strong>and</strong> network connectivity.
+        </blockquote>
+        <figcaption>
+          &mdash; Gananayak, <cite>Harihar Motors</cite>  </figcaption>
+      </figure>
+      <blockquote class="b1" style="font-size: 20px;">Of all the things I didn't say, I didn't say <q>I definitely didn’t say <q>I did not say <q>I never said,
+        <q>I’ll get the readers on my side with cupcakes!</q> I only implied it.</q> that’s totally and
+    completely false. Look, Mr. Hamilton, here completely agrees with me.</q> It was, rather, a couple of crisp
+Mr. Washingtons who didthe talking</q> most.</blockquote>
+
+<figure class="quote">
+    <blockquote>
+      But web browsers aren’t like web servers. If your back-end code is getting so big that it’s starting to run noticably slowly, you can throw more computing power at it by scaling up your server. That’s not an option on the front-end where you don’t really have <em>one</em> run-time environment—your end users have their own run-time environment with its own constraints around computing power <strong>and</strong> network connectivity.
+    </blockquote>
+    <figcaption>
+      &mdash; Harihar, <cite>Madhu Panda</cite>  </figcaption>
+  </figure>
+  </div>
+</div>
+
+
+</body>
+<footer id="footer" class="page-footer font-small blue">
+
+  
+  <div class="container" id="socials">
+      <a href="www.facebook.com" class="fa fa-facebook"></a>
+      <a href="www.twitter.com" class="fa fa-twitter"></a>
+      <a href="www.gmail.com" class="fa fa-google"></a>
+      <a href="www.linkedin.com" class="fa fa-linkedin"></a>
+      <a href="www.youtube.com" class="fa fa-youtube"></a>
+      <a href="www.instagram.com" class="fa fa-instagram"></a>
+      <a href="www.skype.com" class="fa fa-skype"></a>
+      <div style="color: rgb(210, 225, 238);"> © 2020 Copyright & Licensed:
+        <a class="text-white" style="text-decoration: none; text-align: center; color: rgb(19, 51, 80);" href="https://github.com/ShibanandaJena">
+         Developer.com </a>
+    </div>
+  </div>
+</footer>
+</html>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script>
+   $(window).load(function() {
+   $(".preloader").delay(2500).fadeOut("slow");
+   $("#overlayer").delay(2500).fadeOut("slow");
+   })
+
+//    const counters = document.querySelectorAll(".counter");
+
+//   counters.forEach((counter) => {
+//   counter.innerText = "0";
+//   const updateCounter = () => {
+//     const target = +counter.getAttribute("data-target");
+//     const count = +counter.innerText;
+//     const increment = target / 200;
+//     if (count < target) {
+//       counter.innerText = `${Math.ceil(count + increment)}`;
+//       setTimeout(updateCounter, 1);
+//     } else counter.innerText = target;
+//   };
+//   updateCounter();
+// });
+
+</script>

@@ -245,7 +245,8 @@ def admin_view_question_view(request):
 @login_required(login_url='adminlogin')
 def view_question_view(request,pk):
     questions=models.Question.objects.all().filter(course_id=pk)
-    return render(request,'quiz/view_question.html',{'questions':questions})
+    answers = models.Question.objects.all().filter(course_id=pk)
+    return render(request,'quiz/view_question.html',{'questions':questions,'answers':answers})
 
 @login_required(login_url='adminlogin')
 def delete_question_view(request,pk):

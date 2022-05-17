@@ -32,7 +32,7 @@
         <tr>
 
           <th>Question</th>
-         
+          <th>Answer</th>
           <th>Marks</th>
           <th>Delete Question</th>
         </tr>
@@ -41,7 +41,7 @@
       <tr>
 
         <td> {{c.question}}</td>
-        
+        <td> {{c.answer}}</td>
         <td>{{c.marks}}</td>
         <td><a class="btn btn-primary btn-xs" href="{% url 'delete-question' c.id  %}"><span class="glyphicon glyphicon-trash"></span></a></td>
         

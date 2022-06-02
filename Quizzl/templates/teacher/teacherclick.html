@@ -7,35 +7,168 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <style media="screen">
-    .jumbotron {
-      margin-top: 0px;
-      margin-bottom: 0px;
-    }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-    .jumbotron h1 {
-      text-align: center;
-    }
+*{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            border:none;
+            font-family: 'Poppins', sans-serif;
+          }
 
+          html{
+              font-size:62.5%;
+          }
+
+          .all{
+            width:100%;
+            min-height:100vh;
+            background: linear-gradient(#3a9d2f, #24553d);
+
+            display:flex;
+            justify-content: center;
+            align-items: center;
+
+          }
+
+          .container-1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:80vh;
+            z-index:2;
+
+
+          }
+
+
+          button{
+            width:200px;
+            height:55px;
+            margin:30px;
+
+            text-transform: uppercase;
+            font-style: italic;
+            font-size:1.7rem;
+            font-weight: 800;
+            letter-spacing: 0.1rem;
+            background-color: #020303;
+            color:#fefefe;
+
+
+            cursor:pointer;
+            position:relative;
+            z-index:3;
+
+          }
+
+          button::before{
+              content:'';
+              position:absolute;
+              width:200px;
+              height:55px;
+
+              top:0;
+              left:0;
+
+              transition: .5s linear;
+
+
+              z-index: -2;
+
+          }
+
+
+          button::after{
+              content:'';
+              position:absolute;
+              background-color: #020303;
+
+              width:200px;
+              height:55px;
+
+              top:0;
+              left:0;
+              z-index: -1;
+
+
+
+          }
+
+          /* hover effect */
+
+          button:hover::before
+          {
+            filter:blur(11px);
+
+          }
+
+          button:hover::after
+          {
+            border: 1px solid #020303;
+          }
+
+          .btn-1:hover::before
+
+          {
+            background:linear-gradient(45deg, #00ccff, #0e1538, #d400d4);
+            transform: rotate(4deg);
+          }
+
+          .btn-2:hover::before
+          {
+            background:linear-gradient(45deg, #ff075b, #0e1538,#1aff22);
+            transform: rotate(-4deg);
+          }
+
+          /* media Q*/
+
+          @media only screen and (max-width: 992px){
+
+            .container-1{
+              flex-direction: column;
+            }
+          }
+.dashimgl{
+    width:auto;
+    height:319px;
+
+}
+.dashimgr{
+    width:auto;
+    height:260px;
+
+}
   </style>
 
 </head>
 
 <body>
+{% include "quiz/navbar.html" %}
 
-  {% include "quiz/navbar.html" %}
-  <br><br>
-  <div class="jumbotron" style="margin-bottom:0px;">
-    <h1 class="display-4">Hello, Teacher</h1>
-    <p class="lead">Welcome to Online Quiz</p>
-    <hr class="my-4">
-    <p>You can access various features after Login.</p>
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="teachersignup" role="button">Create Your Account</a>
-      <a class="btn btn-primary btn-lg" href="teacherlogin" role="button">Login</a>
-    </p>
-    <br><br><br><br>
+<div>
+
+
+</div>
+<div class="all">
+        <div class="container-1">
+                        <img src="{% static "image/teacherright.png" %}" class="dashimgr" alt="">
+
+            <a href="teachersignup"><button class="btn-1" >Create Your Account</button></a>
+            <a href="teacherlogin"><button class="btn-2">Login</button></a>
+                        <img src="{% static "image/teacherleft.png" %}" class="dashimgl" alt="">
+
+        </div>
+    </div>
+
+
+
   </div>
-  {% include "quiz/footer.html" %}
-</body>
 
+</body>
+<div>
+  {% include "teacher/footer.html" %}
+
+</div>
 </html>

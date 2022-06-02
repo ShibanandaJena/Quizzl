@@ -19,7 +19,7 @@
 
     header {
       position: fixed;
-      background: #22242A;
+      background: linear-gradient(#2e7326, #1e3b2d);
       padding: 20px;
       width: 100%;
       z-index: 1;
@@ -39,7 +39,7 @@
 
     .logout_btn {
       padding: 5px;
-      background: #19B3D3;
+      background: #4aaa68;
       text-decoration: none;
       float: right;
       margin-top: -30px;
@@ -57,7 +57,7 @@
     }
 
     .sidebar {
-      background: #2f323a;
+      background: linear-gradient(#34912a, #244032);
       margin-top: 70px;
       padding-top: 30px;
       position: fixed;
@@ -138,6 +138,7 @@
       background-size: cover;
       height: 100vh;
       transition: 0.5s;
+      background-color: #67cc95;
     }
 
     #check:checked~.content {
@@ -178,6 +179,8 @@
       <img src="{% static "image/teacher.png" %}" class="profile_image" alt="">
       <h4>{{request.user.first_name}}</h4>
       <h6 style="color: rgb(255, 255, 255);">( Teacher )</h6>
+      <i class='fas fa-circle' style='color:#39f33c; font-size: 15px;'></i><span style="color: rgb(210, 205, 205);">Online</span>
+
 
     </center>
 
@@ -197,7 +200,7 @@
 
 
     <br><br><br>
-    {% include "quiz/footer.html" %}
+
   </div>
   <!--content end-->
 </body>

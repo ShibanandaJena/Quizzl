@@ -25,10 +25,6 @@ urlpatterns = [
     path('admin-view-teacher', views.admin_view_teacher_view,name='admin-view-teacher'),
     path('update-teacher/<int:pk>', views.update_teacher_view,name='update-teacher'),
     path('delete-teacher/<int:pk>', views.delete_teacher_view,name='delete-teacher'),
-    path('admin-view-pending-teacher', views.admin_view_pending_teacher_view,name='admin-view-pending-teacher'),
-    path('admin-view-teacher-salary', views.admin_view_teacher_salary_view,name='admin-view-teacher-salary'),
-    path('approve-teacher/<int:pk>', views.approve_teacher_view,name='approve-teacher'),
-    path('reject-teacher/<int:pk>', views.reject_teacher_view,name='reject-teacher'),
 
     path('admin-student', views.admin_student_view,name='admin-student'),
     path('admin-view-student', views.admin_view_student_view,name='admin-view-student'),

@@ -21,9 +21,8 @@
     }
 
     .bg-c-green {
-      background-color: #00b712;
-      background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
-    }
+    background-image: linear-gradient(315deg, #213149 0%, #15a6ff 74%);
+}
 
     .row {
       margin: 100px;
@@ -54,9 +53,9 @@
           <div class="col-md-4 col-xl-3">
       <div class="card bg-c-green order-card">
         <div class="card-block">
-          <h6 class="m-b-20">{{t.course_name}}
-          </h6>
-          <h2 class="text-right"><a class="btn btn-danger btn-xs" href="{% url 'take-exam' t.id  %}"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></h2>
+          <h2 class="m-b-20">{{t.course_name}}
+          </h2>
+          <h1 class="text-right"><a class="btn btn-danger btn-xs" href="{% url 'take-exam' t.id  %}"><span class="glyphicon glyphicon-circle-arrow-right"></span></a></h1>
 
         </div>
       </div>

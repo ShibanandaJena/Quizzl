@@ -19,38 +19,53 @@
     .row {
       margin: 100px;
     }
+    .order-card {
+      color: rgb(255, 255, 255);
+    }
+
+    .bg-c-green {
+      background-color: #00b712;
+      background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
+    }
+   .card {
+      border-radius: 10px;
+
+      -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+      box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+      border: 1px solid black;
+      margin-bottom: 30px;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .card .card-block {
+      padding: 25px;
+    }
+
+    .order-card i {
+      font-size: 26px;
+    }
   </style>
 </head>
 <br><br>
 <div class="container">
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h6 class="panel-title">View Marks</h6>
-    </div>
-    <table class="table table-hover" id="dev-table">
-      <thead>
-        <tr>
 
-          <th>Exam Name</th>
-          
-          <th>Total Marks</th>
-          <th>Attempt</th>
-          <th>Exam Date</th>
-        </tr>
-      </thead>
+
       {% for t in results %}
-      <tr>
 
-        <td> {{t.exam}}</td>
-        <td> {{t.marks}}</td>
-        <td>Attemp {{ forloop.counter }}</td>
-        <td> {{t.date}}</td>
-        
-        
-      </tr>
+      <div class="col-md-4 col-xl-3">
+      <div class="card bg-c-green order-card">
+        <div class="card-block">
+          <h6 class="m-b-20">Exam Name- {{t.exam}}</h6>
+          <h6 class="m-b-20">Total Marks - {{t.marks}}</h6>
+          <h6 class="m-b-20">Attempt - {{ forloop.counter }}</h6>
+          <h6 class="m-b-20">Exam Date - {{t.date}}</h6>
+        </div>
+      </div>
+    </div>
+
       {% endfor %}
-    </table>
-  </div>
+
 </div>
 
 <br><br><br><br><br><br>

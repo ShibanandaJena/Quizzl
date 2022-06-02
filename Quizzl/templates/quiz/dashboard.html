@@ -23,7 +23,7 @@ body {margin:0;}
   top: 0;
   height: 75px;
   width: 100%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
 
@@ -37,7 +37,7 @@ body {margin:0;}
 .navbar #ok:hover {
   background-color:whitesmoke;
   color: black;
-  
+
 }
 
 
@@ -217,9 +217,10 @@ q {
 </head>
 <body>
     <div>{% include "quiz/load.html" %}</div>
+
 <div class="navbar">
   <div class="container" id="logo">
-      <a href=""><img style="height: 76px; width: 82px;" src=" {% static "dash/LOGO.png" %} " alt=""></a>
+      <a href="" ><img style="height: 76px; width: 82px;" src=" {% static "dash/LOGO.png" %} " alt=""></a>
       <a id="ok" style=" padding-left: 30px;" href="/" class="nav-item nav-link active">Home</a>
       <a id="ok" href="/teacher/teacherclick" class="nav-item nav-link">Teacher</a>
       <a id="ok" href="/student/studentclick" class="nav-item nav-link">Student</a>

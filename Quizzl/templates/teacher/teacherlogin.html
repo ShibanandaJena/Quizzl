@@ -1,94 +1,255 @@
 <!DOCTYPE html>
 {% load widget_tweaks %}
-{% load static %}
 <html>
 <head>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Admin Login</title>
+<title>Teacher Login</title>
 <style>
-        body {
-                background: linear-gradient(132deg, #f44336, #E91E63, #9C27B0, #673AB7, #3F51B5, #2196F3,#03A9F4, #00BCD4, #009688, #4CAF50, #FFC107, #FF9800, #f44336, #E91E63, #9C27B0, #673AB7, #3F51B5, #2196F3,#03A9F4, #00BCD4, #009688, #4CAF50, #FFC107, #FF9800);
-                background-size: 400% 400%;
-                animation: BackgroundGradient 30s ease infinite;
-            }
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: linear-gradient(#3a9d2f, #24553d);
+}
 
-            @keyframes BackgroundGradient {
-                0% {background-position: 0% 50%;}
-                50% {background-position: 100% 50%;}
-                100% {background-position: 0% 50%;}
-            }
-            .baslik
-{
-    color: #fff;
-    text-align: center;
-    font-family: 'Fira Sans', sans-serif;
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgb(34 167 109 / 50%);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
 }
-.arkalogin
-{
-    width: 300px;
-    text-align: center;
-    background: #fff;
-    height: 300px;
-    padding: 10px;
-    margin: 50px auto;
-}
-.loginbaslik
-{
-    color: #888888;
-    text-align: left;
-    font-size: 19px;
-    margin-top: 15px;
-}
-body
-{
-    margin: 0;
-}
-.form-control,.btn{
 
-    margin-top: 20px;
-    margin-bottom:20px;
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
 }
-.btn:hover{
-    background-color: wheat;
+
+.login-box .user-box {
+  position: relative;
 }
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #fff;
+  font-size: 12px;
+}
+
+.login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+
+.login-box a:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+    0 0 100px #03e9f4;
+}
+
+.login-box a span {
+  position: absolute;
+  display: block;
+}
+
+.login-box a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.login-box a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+.login-box a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.login-box a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
+#tsparticles {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+
 </style>
 </head>
-<body></body>
+<body>
+  {% include "quiz/navbar.html" %}
+<div id="tsparticles"></div>
+<div class="login-box">
+  <h2>Login</h2>
+  <form class="box" method="post">
 
+      {% csrf_token %}
+    <div class="user-box">
 
-    <div class="container">
-       <section style="height: 100vh;">
-    <div style="background-image: url(images/arka.jpg); background-attachment: fixed; background-size: cover; width: 100%; height: 100vh; position: relative;"  >
-    <div class="baslik">
-        <b style="font-size: 101px; text-align: center; margin-bottom: -21px; display: block;"><img src=" {% static "dash/LOGO.png" %} " alt=""></b>
-        <span style="font-size: 19px; text-align: center; display: block; margin-bottom: 25px;">TEACHER LOGIN</span>
+      {% render_field form.username class="form-control" placeholder="Username" %}
+      {% render_field form.password class="form-control" placeholder="Password" %}
     </div>
-    <section>
-    <form method="post" action="">
-        {% csrf_token %}
-        <div class="arkalogin">
-                    <p class="text-muted"> Please enter your Username and password!</p>
+        <input type="submit" name="" value="Login">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
 
-                     {% render_field form.username class="form-control" placeholder="Username" %}
-                     {% render_field form.password class="form-control" placeholder="Password" %}
+  </form>
+</div>
+<script>
+tsParticles.load("tsparticles", {
+  fpsLimit: 60,
+  particles: {
+    color: {
+      value: ["#E3F8FF", "#28CC9E", "#A6ED8E"]
+    },
+    move: {
+      enable: true,
+      direction: "top-right",
+      random: true,
+      speed: 1.5
+    },
+    number: {
+      value: 50
+    },
+    opacity: {
+      value: 0.6,
+      random: {
+        enable: true,
+        minimumValue: 0.3
+      }
+    },
+    shape: {
+      type: ["square", "circle"]
+    },
+    size: {
+      value: 2
+    }
+  }
+});
 
-
-            <input type="submit" class="btn" name="" value="Login">
-
-        </div>
-    </form>
-    </section>
-    </div>
-    </section>
-        </div>
-
+</script>
+</body>
 <div>
-    {% include "quiz/footer.html" %}
+  {% include "teacher/footer.html"%}
 </div>
 
-</body>
-
 </html>
+
+
+
+
+
+
+
+
+

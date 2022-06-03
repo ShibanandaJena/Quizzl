@@ -125,3 +125,7 @@ def student_marks_view(request):
     courses=QMODEL.Course.objects.all()
     return render(request,'student/student_marks.html',{'courses':courses})
   
+# @login_required(login_url='studentlogin')
+# @user_passes_test(is_student)
+# def dummy_view(request):
+#         return HttpResponseRedirect('dummy_quiz')

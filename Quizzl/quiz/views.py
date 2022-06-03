@@ -100,45 +100,6 @@ def delete_teacher_view(request,pk):
     return HttpResponseRedirect('/admin-view-teacher')
 
 
-
-
-@login_required(login_url='adminlogin')
-def admin_view_pending_teacher_view(request):
-    teachers= TMODEL.Teacher.objects.all().filter(status=False)
-    return render(request,'quiz/admin_view_pending_teacher.html',{'teachers':teachers})
-
-
-@login_required(login_url='adminlogin')
-def approve_teacher_view(request,pk):
-    teacherSalary=forms.TeacherSalaryForm()
-    if request.method=='POST':
-        teacherSalary=forms.TeacherSalaryForm(request.POST)
-        if teacherSalary.is_valid():
-            teacher=TMODEL.Teacher.objects.get(id=pk)
-            teacher.salary=teacherSalary.cleaned_data['salary']
-            teacher.status=True
-            teacher.save()
-        else:
-            print("form is invalid")
-        return HttpResponseRedirect('/admin-view-pending-teacher')
-    return render(request,'quiz/salary_form.html',{'teacherSalary':teacherSalary})
-
-@login_required(login_url='adminlogin')
-def reject_teacher_view(request,pk):
-    teacher=TMODEL.Teacher.objects.get(id=pk)
-    user=User.objects.get(id=teacher.user_id)
-    user.delete()
-    teacher.delete()
-    return HttpResponseRedirect('/admin-view-pending-teacher')
-
-@login_required(login_url='adminlogin')
-def admin_view_teacher_salary_view(request):
-    teachers= TMODEL.Teacher.objects.all().filter(status=True)
-    return render(request,'quiz/admin_view_teacher_salary.html',{'teachers':teachers})
-
-
-
-
 @login_required(login_url='adminlogin')
 def admin_student_view(request):
     dict={
